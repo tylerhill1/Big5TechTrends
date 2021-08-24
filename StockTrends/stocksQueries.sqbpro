@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Volumes/TyDrive/DS Practice/StockTrends/stocks.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="432"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainstocks"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="stocks" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="46"/><column index="2" value="59"/><column index="3" value="115"/><column index="4" value="58"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">/*See entire table*/
+
+-- SELECT * FROM stocks;
+
+/*What are the distinct stocks in the table?*/
+
+-- SELECT DISTINCT name FROM stocks;
+
+/*Query all data for a single stock. Do you notice any overall trends?
+
+ANSWER: 
+While the trend is increasing across the 5-year span, 
+we see a significant increase from 2019 to 2020,
+which makes sense given the state of COVID at that time
+
+*/
+
+-- SELECT * FROM stocks
+-- WHERE name = 'Amazon';
+
+/*Which rows have a price above 100?*/
+
+-- SELECT * FROM stocks
+-- WHERE price &gt; 100;
+
+/*Which rows have a price between 100 and 200?*/
+
+-- SELECT * FROM stocks
+-- WHERE price BETWEEN 100 AND 200;
+
+/*Sort the table by price.*/
+
+-- SELECT * FROM stocks
+-- ORDER BY price;
+
+ /*What are the minimum and maximum prices?
+ 
+ ANSWER: 
+	MIN: $40.11
+	MAX: $3310.15
+ 
+ */
+ 
+--  SELECT price FROM stocks
+--  ORDER BY price
+--  LIMIT 1;
+--  
+--  SELECT price FROM stocks
+--  ORDER BY price DESC
+--  LIMIT 1;
+ 
+ 
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
